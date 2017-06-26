@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		34204B80035486BEF8D6C73E /* Pods_snapshareUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68F7214D7DE699DDC9FEA860 /* Pods_snapshareUITests.framework */; };
 		574494F11F01A61200F65932 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574494F01F01A61200F65932 /* LoginViewController.swift */; };
+		574494F31F01BC3900F65932 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574494F21F01BC3900F65932 /* PostTableViewCell.swift */; };
 		57CC327C1F01A1FA00282945 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CC327B1F01A1FA00282945 /* AppDelegate.swift */; };
 		57CC327E1F01A1FA00282945 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CC327D1F01A1FA00282945 /* HomeViewController.swift */; };
 		57CC32801F01A1FA00282945 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CC327F1F01A1FA00282945 /* FriendsViewController.swift */; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		02BDCE0D94DD00416FA81610 /* Pods-snapshare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snapshare.release.xcconfig"; path = "Pods/Target Support Files/Pods-snapshare/Pods-snapshare.release.xcconfig"; sourceTree = "<group>"; };
 		574494F01F01A61200F65932 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		574494F21F01BC3900F65932 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		57CC32781F01A1FA00282945 /* snapshare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = snapshare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57CC327B1F01A1FA00282945 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57CC327D1F01A1FA00282945 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				574494F01F01A61200F65932 /* LoginViewController.swift */,
 				57CC327D1F01A1FA00282945 /* HomeViewController.swift */,
 				57CC327F1F01A1FA00282945 /* FriendsViewController.swift */,
+				574494F21F01BC3900F65932 /* PostTableViewCell.swift */,
 				57CC32811F01A1FA00282945 /* Main.storyboard */,
 				57CC32841F01A1FA00282945 /* Assets.xcassets */,
 				57CC32861F01A1FA00282945 /* LaunchScreen.storyboard */,
@@ -458,6 +461,7 @@
 			files = (
 				574494F11F01A61200F65932 /* LoginViewController.swift in Sources */,
 				57CC32801F01A1FA00282945 /* FriendsViewController.swift in Sources */,
+				574494F31F01BC3900F65932 /* PostTableViewCell.swift in Sources */,
 				57CC327C1F01A1FA00282945 /* AppDelegate.swift in Sources */,
 				57CC327E1F01A1FA00282945 /* HomeViewController.swift in Sources */,
 			);

@@ -13,11 +13,15 @@ import FirebaseDatabase
 import SDWebImage
 import FBSDKLoginKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var postTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        postTableView.delegate = self
+        postTableView.dataSource = self
     }
 
     @IBAction func logoutButtonClicked(_ sender: UIBarButtonItem) {
@@ -33,8 +37,16 @@ class HomeViewController: UIViewController {
         delegate.window?.rootViewController = signUp
         delegate.rememberLogin()
     }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
 
-
-
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = postTableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostTableViewCell
+        cell.userText.text = String(indexPath.row)
+        cell.tapAction = { [weak self] (cell) in
+        }
+        return cell
+    }
 }
 
