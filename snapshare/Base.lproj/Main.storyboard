@@ -10,6 +10,38 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="dE3-nF-DAk">
+            <objects>
+                <viewController id="DeO-KX-Ycg" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7lm-WT-Zex"/>
+                        <viewControllerLayoutGuide type="bottom" id="ahu-Z5-opE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2Nm-z4-HEt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Xg-S0-Nl4">
+                                <rect key="frame" x="16" y="125" width="343" height="335"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ink-3n-r6D">
+                                <rect key="frame" x="148" y="520" width="78" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Camera"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="iVk-lH-G4f">
+                        <barButtonItem key="rightBarButtonItem" title="Upload" id="sqs-Aq-idV"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n7k-WR-iAS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1736.8" y="1046.6266866566718"/>
+        </scene>
         <!--Home View Controller-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
@@ -210,6 +242,7 @@
                     <connections>
                         <segue destination="wI6-Pn-8vg" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="ozF-XA-Zlb" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="3pY-pm-wGr" kind="relationship" relationship="viewControllers" id="z2M-Rj-xgo"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -254,8 +287,28 @@
             </objects>
             <point key="canvasLocation" x="797.60000000000002" y="356.67166416791605"/>
         </scene>
+        <!--Camera-->
+        <scene sceneID="vko-hi-hvo">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3pY-pm-wGr" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Camera" image="camera" id="a3v-uC-E3g"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8SP-03-6pd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="DeO-KX-Ycg" kind="relationship" relationship="rootViewController" id="Cq5-51-KFe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="buA-U9-Fzk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1" y="1047"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="camera" width="32" height="32"/>
         <image name="friends" width="32" height="32"/>
         <image name="home" width="32" height="32"/>
     </resources>
