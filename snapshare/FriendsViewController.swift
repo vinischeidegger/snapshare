@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  SecondViewController.swift
 //  snapshare
 //
 //  Created by Francisco San Emeterio on 6/26/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class FriendsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

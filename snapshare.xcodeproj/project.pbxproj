@@ -7,14 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34204B80035486BEF8D6C73E /* Pods_snapshareUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68F7214D7DE699DDC9FEA860 /* Pods_snapshareUITests.framework */; };
+		574494F11F01A61200F65932 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574494F01F01A61200F65932 /* LoginViewController.swift */; };
 		57CC327C1F01A1FA00282945 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CC327B1F01A1FA00282945 /* AppDelegate.swift */; };
-		57CC327E1F01A1FA00282945 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CC327D1F01A1FA00282945 /* FirstViewController.swift */; };
-		57CC32801F01A1FA00282945 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CC327F1F01A1FA00282945 /* SecondViewController.swift */; };
+		57CC327E1F01A1FA00282945 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CC327D1F01A1FA00282945 /* HomeViewController.swift */; };
+		57CC32801F01A1FA00282945 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CC327F1F01A1FA00282945 /* FriendsViewController.swift */; };
 		57CC32831F01A1FA00282945 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57CC32811F01A1FA00282945 /* Main.storyboard */; };
 		57CC32851F01A1FA00282945 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57CC32841F01A1FA00282945 /* Assets.xcassets */; };
 		57CC32881F01A1FA00282945 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57CC32861F01A1FA00282945 /* LaunchScreen.storyboard */; };
 		57CC32931F01A1FA00282945 /* snapshareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CC32921F01A1FA00282945 /* snapshareTests.swift */; };
 		57CC329E1F01A1FA00282945 /* snapshareUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CC329D1F01A1FA00282945 /* snapshareUITests.swift */; };
+		57CC32AC1F01A21800282945 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57CC32AB1F01A21800282945 /* GoogleService-Info.plist */; };
+		7DA329EE3F9C05751CB41A24 /* Pods_snapshareTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A812A410BA6A6FB1159ABEEB /* Pods_snapshareTests.framework */; };
+		B03E9F3250EE5160E8BCADF6 /* Pods_snapshare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7195FCE8E5CBD419B92B6C1E /* Pods_snapshare.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,10 +40,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02BDCE0D94DD00416FA81610 /* Pods-snapshare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snapshare.release.xcconfig"; path = "Pods/Target Support Files/Pods-snapshare/Pods-snapshare.release.xcconfig"; sourceTree = "<group>"; };
+		574494F01F01A61200F65932 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		57CC32781F01A1FA00282945 /* snapshare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = snapshare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57CC327B1F01A1FA00282945 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		57CC327D1F01A1FA00282945 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		57CC327F1F01A1FA00282945 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		57CC327D1F01A1FA00282945 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		57CC327F1F01A1FA00282945 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		57CC32821F01A1FA00282945 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		57CC32841F01A1FA00282945 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57CC32871F01A1FA00282945 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +56,15 @@
 		57CC32991F01A1FA00282945 /* snapshareUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = snapshareUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		57CC329D1F01A1FA00282945 /* snapshareUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = snapshareUITests.swift; sourceTree = "<group>"; };
 		57CC329F1F01A1FA00282945 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57CC32AB1F01A21800282945 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6705F44B98C2FFCEB36BE3BF /* Pods-snapshareUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snapshareUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-snapshareUITests/Pods-snapshareUITests.release.xcconfig"; sourceTree = "<group>"; };
+		68F7214D7DE699DDC9FEA860 /* Pods_snapshareUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_snapshareUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7195FCE8E5CBD419B92B6C1E /* Pods_snapshare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_snapshare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		74F6D103C4096CE6EE2DA05E /* Pods-snapshareUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snapshareUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-snapshareUITests/Pods-snapshareUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A3DE5D36A0F6C9E7920DEC2A /* Pods-snapshareTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snapshareTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-snapshareTests/Pods-snapshareTests.release.xcconfig"; sourceTree = "<group>"; };
+		A812A410BA6A6FB1159ABEEB /* Pods_snapshareTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_snapshareTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2994AF34228E44C1EB2E852 /* Pods-snapshare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snapshare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-snapshare/Pods-snapshare.debug.xcconfig"; sourceTree = "<group>"; };
+		E6EFDFF6551E8DD2A7F0DCA6 /* Pods-snapshareTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snapshareTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-snapshareTests/Pods-snapshareTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B03E9F3250EE5160E8BCADF6 /* Pods_snapshare.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DA329EE3F9C05751CB41A24 /* Pods_snapshareTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34204B80035486BEF8D6C73E /* Pods_snapshareUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +102,8 @@
 				57CC32911F01A1FA00282945 /* snapshareTests */,
 				57CC329C1F01A1FA00282945 /* snapshareUITests */,
 				57CC32791F01A1FA00282945 /* Products */,
+				D817609594ECB82DCC0224CF /* Pods */,
+				F3E26CF2AB2EE07CBBE135F7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,12 +121,14 @@
 			isa = PBXGroup;
 			children = (
 				57CC327B1F01A1FA00282945 /* AppDelegate.swift */,
-				57CC327D1F01A1FA00282945 /* FirstViewController.swift */,
-				57CC327F1F01A1FA00282945 /* SecondViewController.swift */,
+				574494F01F01A61200F65932 /* LoginViewController.swift */,
+				57CC327D1F01A1FA00282945 /* HomeViewController.swift */,
+				57CC327F1F01A1FA00282945 /* FriendsViewController.swift */,
 				57CC32811F01A1FA00282945 /* Main.storyboard */,
 				57CC32841F01A1FA00282945 /* Assets.xcassets */,
 				57CC32861F01A1FA00282945 /* LaunchScreen.storyboard */,
 				57CC32891F01A1FA00282945 /* Info.plist */,
+				57CC32AB1F01A21800282945 /* GoogleService-Info.plist */,
 			);
 			path = snapshare;
 			sourceTree = "<group>";
@@ -128,6 +151,29 @@
 			path = snapshareUITests;
 			sourceTree = "<group>";
 		};
+		D817609594ECB82DCC0224CF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E2994AF34228E44C1EB2E852 /* Pods-snapshare.debug.xcconfig */,
+				02BDCE0D94DD00416FA81610 /* Pods-snapshare.release.xcconfig */,
+				E6EFDFF6551E8DD2A7F0DCA6 /* Pods-snapshareTests.debug.xcconfig */,
+				A3DE5D36A0F6C9E7920DEC2A /* Pods-snapshareTests.release.xcconfig */,
+				74F6D103C4096CE6EE2DA05E /* Pods-snapshareUITests.debug.xcconfig */,
+				6705F44B98C2FFCEB36BE3BF /* Pods-snapshareUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F3E26CF2AB2EE07CBBE135F7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7195FCE8E5CBD419B92B6C1E /* Pods_snapshare.framework */,
+				A812A410BA6A6FB1159ABEEB /* Pods_snapshareTests.framework */,
+				68F7214D7DE699DDC9FEA860 /* Pods_snapshareUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +181,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 57CC32A21F01A1FA00282945 /* Build configuration list for PBXNativeTarget "snapshare" */;
 			buildPhases = (
+				12C05033FACBB82134FD6DCC /* [CP] Check Pods Manifest.lock */,
 				57CC32741F01A1FA00282945 /* Sources */,
 				57CC32751F01A1FA00282945 /* Frameworks */,
 				57CC32761F01A1FA00282945 /* Resources */,
+				D4CA526E8AC7860532CFCD07 /* [CP] Embed Pods Frameworks */,
+				50B13975DD2039979D9F36BD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -152,9 +201,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 57CC32A51F01A1FA00282945 /* Build configuration list for PBXNativeTarget "snapshareTests" */;
 			buildPhases = (
+				CED91BBEFAAEBB54C2BB0869 /* [CP] Check Pods Manifest.lock */,
 				57CC328A1F01A1FA00282945 /* Sources */,
 				57CC328B1F01A1FA00282945 /* Frameworks */,
 				57CC328C1F01A1FA00282945 /* Resources */,
+				4D14A93851A7046412FA3DA2 /* [CP] Embed Pods Frameworks */,
+				831899E42A8B2C6DF96CD3F3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -170,9 +222,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 57CC32A81F01A1FA00282945 /* Build configuration list for PBXNativeTarget "snapshareUITests" */;
 			buildPhases = (
+				04C5ACB54ADF461CD594CFCA /* [CP] Check Pods Manifest.lock */,
 				57CC32951F01A1FA00282945 /* Sources */,
 				57CC32961F01A1FA00282945 /* Frameworks */,
 				57CC32971F01A1FA00282945 /* Resources */,
+				85F1E19F86C9E2249E25A5B8 /* [CP] Embed Pods Frameworks */,
+				1A3C0C80A99C17F3B79B1C94 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -236,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57CC32881F01A1FA00282945 /* LaunchScreen.storyboard in Resources */,
+				57CC32AC1F01A21800282945 /* GoogleService-Info.plist in Resources */,
 				57CC32851F01A1FA00282945 /* Assets.xcassets in Resources */,
 				57CC32831F01A1FA00282945 /* Main.storyboard in Resources */,
 			);
@@ -257,14 +313,153 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		04C5ACB54ADF461CD594CFCA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		12C05033FACBB82134FD6DCC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		1A3C0C80A99C17F3B79B1C94 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-snapshareUITests/Pods-snapshareUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4D14A93851A7046412FA3DA2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-snapshareTests/Pods-snapshareTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		50B13975DD2039979D9F36BD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-snapshare/Pods-snapshare-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		831899E42A8B2C6DF96CD3F3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-snapshareTests/Pods-snapshareTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		85F1E19F86C9E2249E25A5B8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-snapshareUITests/Pods-snapshareUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CED91BBEFAAEBB54C2BB0869 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D4CA526E8AC7860532CFCD07 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-snapshare/Pods-snapshare-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		57CC32741F01A1FA00282945 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57CC32801F01A1FA00282945 /* SecondViewController.swift in Sources */,
+				574494F11F01A61200F65932 /* LoginViewController.swift in Sources */,
+				57CC32801F01A1FA00282945 /* FriendsViewController.swift in Sources */,
 				57CC327C1F01A1FA00282945 /* AppDelegate.swift in Sources */,
-				57CC327E1F01A1FA00282945 /* FirstViewController.swift in Sources */,
+				57CC327E1F01A1FA00282945 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +611,7 @@
 		};
 		57CC32A31F01A1FA00282945 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2994AF34228E44C1EB2E852 /* Pods-snapshare.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = snapshare/Info.plist;
@@ -428,6 +624,7 @@
 		};
 		57CC32A41F01A1FA00282945 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02BDCE0D94DD00416FA81610 /* Pods-snapshare.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = snapshare/Info.plist;
@@ -440,6 +637,7 @@
 		};
 		57CC32A61F01A1FA00282945 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6EFDFF6551E8DD2A7F0DCA6 /* Pods-snapshareTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -454,6 +652,7 @@
 		};
 		57CC32A71F01A1FA00282945 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A3DE5D36A0F6C9E7920DEC2A /* Pods-snapshareTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -468,6 +667,7 @@
 		};
 		57CC32A91F01A1FA00282945 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74F6D103C4096CE6EE2DA05E /* Pods-snapshareUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = snapshareUITests/Info.plist;
@@ -481,6 +681,7 @@
 		};
 		57CC32AA1F01A1FA00282945 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6705F44B98C2FFCEB36BE3BF /* Pods-snapshareUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = snapshareUITests/Info.plist;
@@ -511,6 +712,7 @@
 				57CC32A41F01A1FA00282945 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		57CC32A51F01A1FA00282945 /* Build configuration list for PBXNativeTarget "snapshareTests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +721,7 @@
 				57CC32A71F01A1FA00282945 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		57CC32A81F01A1FA00282945 /* Build configuration list for PBXNativeTarget "snapshareUITests" */ = {
 			isa = XCConfigurationList;
@@ -527,6 +730,7 @@
 				57CC32AA1F01A1FA00282945 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
