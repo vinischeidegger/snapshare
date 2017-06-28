@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Camera View Controller-->
         <scene sceneID="dE3-nF-DAk">
             <objects>
-                <viewController id="DeO-KX-Ycg" sceneMemberID="viewController">
+                <viewController id="DeO-KX-Ycg" customClass="CameraViewController" customModule="snapshare" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7lm-WT-Zex"/>
                         <viewControllerLayoutGuide type="bottom" id="ahu-Z5-opE"/>
@@ -23,20 +23,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Xg-S0-Nl4">
-                                <rect key="frame" x="16" y="125" width="343" height="335"/>
+                                <rect key="frame" x="16" y="102" width="343" height="335"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NrA-La-Xmb">
+                                <rect key="frame" x="16" y="452" width="343" height="78"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ink-3n-r6D">
-                                <rect key="frame" x="148" y="520" width="78" height="30"/>
+                                <rect key="frame" x="148" y="562" width="78" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Camera"/>
+                                <connections>
+                                    <action selector="cameraButtonClick:" destination="DeO-KX-Ycg" eventType="touchUpInside" id="ZQU-BW-Cmr"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="iVk-lH-G4f">
-                        <barButtonItem key="rightBarButtonItem" title="Upload" id="sqs-Aq-idV"/>
+                        <barButtonItem key="rightBarButtonItem" title="Post" id="sqs-Aq-idV">
+                            <connections>
+                                <action selector="postButtonClick:" destination="DeO-KX-Ycg" id="anJ-Mi-ifa"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="cameraButton" destination="Ink-3n-r6D" id="cS9-rh-cDY"/>
+                        <outlet property="photoImageView" destination="5Xg-S0-Nl4" id="Jol-7H-qge"/>
+                        <outlet property="postTextView" destination="NrA-La-Xmb" id="5tv-hP-SIj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n7k-WR-iAS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -57,6 +76,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="415" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kwn-zQ-KLP">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PostCell" rowHeight="415" id="Wiy-Ca-bKo" customClass="PostTableViewCell" customModule="snapshare" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="415"/>
@@ -85,6 +105,7 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="RV5-Hg-0WZ" secondAttribute="bottom" constant="-7.5" id="gdT-JG-GaC"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="postImage" destination="RV5-Hg-0WZ" id="Jns-YD-5QR"/>
                                             <outlet property="userText" destination="ARJ-7N-HPY" id="jmY-t1-zHK"/>
@@ -93,7 +114,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="kwn-zQ-KLP" firstAttribute="bottom" secondItem="4ug-Mw-9AY" secondAttribute="top" id="APa-ZP-cii"/>
                             <constraint firstItem="kwn-zQ-KLP" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="Gmw-cm-yJT"/>
@@ -196,7 +217,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="vei-X3-dig" firstAttribute="trailing" secondItem="sxk-vV-TjS" secondAttribute="trailing" id="20I-1Z-46Q"/>
                             <constraint firstItem="sBj-Eg-Q0Q" firstAttribute="trailing" secondItem="CY2-JV-MYx" secondAttribute="trailing" id="Dfb-aD-Z1X"/>

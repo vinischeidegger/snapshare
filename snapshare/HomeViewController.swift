@@ -17,11 +17,18 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     @IBOutlet weak var postTableView: UITableView!
     
+    var dbRef : DatabaseReference!
+    var currentUser : String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         postTableView.delegate = self
         postTableView.dataSource = self
+        
+        self.dbRef = Database.database().reference()
+        self.currentUser = Auth.auth().currentUser?.uid
+        
     }
 
     @IBAction func logoutButtonClicked(_ sender: UIBarButtonItem) {
@@ -37,6 +44,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         delegate.window?.rootViewController = signUp
         delegate.rememberLogin()
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
     }
