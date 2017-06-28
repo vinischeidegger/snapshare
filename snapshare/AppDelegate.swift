@@ -27,7 +27,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        UINavigationBar.appearance().barTintColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1.0)
+        UINavigationBar.appearance().tintColor = UIColor.black
         
+        //UIApplication.shared.statusBarStyle = .lightContent
+        
+        UITabBar.appearance().barTintColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1.0)
+        UITabBar.appearance().tintColor = UIColor.black
+
         rememberLogin()
         
         return true
