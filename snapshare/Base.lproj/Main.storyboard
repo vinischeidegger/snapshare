@@ -254,19 +254,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vei-X3-dig">
-                                <rect key="frame" x="43" y="253" width="288" height="30"/>
+                                <rect key="frame" x="43" y="253" width="289" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sxk-vV-TjS">
-                                <rect key="frame" x="43" y="311" width="288" height="30"/>
+                                <rect key="frame" x="43" y="311" width="289" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sBj-Eg-Q0Q">
-                                <rect key="frame" x="43" y="396" width="288" height="30"/>
+                                <rect key="frame" x="43" y="396" width="289" height="30"/>
                                 <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Log In"/>
@@ -275,7 +275,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CY2-JV-MYx">
-                                <rect key="frame" x="43" y="444" width="288" height="30"/>
+                                <rect key="frame" x="43" y="444" width="289" height="30"/>
                                 <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Sign Up"/>
@@ -284,7 +284,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="npu-dI-81a">
-                                <rect key="frame" x="43" y="546" width="288" height="30"/>
+                                <rect key="frame" x="43" y="546" width="289" height="30"/>
                                 <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Facebook"/>
@@ -292,36 +292,33 @@
                                     <action selector="facebookLoginClicked:" destination="y9U-1P-zdQ" eventType="touchUpInside" id="a8Q-YP-GyH"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SnapShare" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="drI-78-s2g">
-                                <rect key="frame" x="43" y="127" width="288" height="35"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="SnapShareLogoBig.png" translatesAutoresizingMaskIntoConstraints="NO" id="RaI-DY-0Mq">
+                                <rect key="frame" x="9" y="13" width="366" height="232"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="ATD-3B-C7k"/>
+                                    <constraint firstAttribute="height" constant="128" id="CqS-c0-3wK"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="vei-X3-dig" firstAttribute="trailing" secondItem="sxk-vV-TjS" secondAttribute="trailing" id="20I-1Z-46Q"/>
                             <constraint firstItem="sBj-Eg-Q0Q" firstAttribute="trailing" secondItem="CY2-JV-MYx" secondAttribute="trailing" id="Dfb-aD-Z1X"/>
+                            <constraint firstItem="vei-X3-dig" firstAttribute="top" secondItem="RaI-DY-0Mq" secondAttribute="bottom" constant="42" id="F73-67-0Nv"/>
                             <constraint firstItem="CY2-JV-MYx" firstAttribute="top" secondItem="sBj-Eg-Q0Q" secondAttribute="bottom" constant="18" id="Hme-OV-tX4"/>
-                            <constraint firstItem="vei-X3-dig" firstAttribute="top" secondItem="drI-78-s2g" secondAttribute="bottom" constant="91" id="L3N-um-vAJ"/>
                             <constraint firstItem="hRZ-Xo-s1R" firstAttribute="top" secondItem="npu-dI-81a" secondAttribute="bottom" constant="91" id="L8N-As-Qyl"/>
                             <constraint firstItem="sxk-vV-TjS" firstAttribute="leading" secondItem="sBj-Eg-Q0Q" secondAttribute="leading" id="LdF-xI-nt3"/>
-                            <constraint firstItem="drI-78-s2g" firstAttribute="leading" secondItem="Rsf-BA-6cZ" secondAttribute="leadingMargin" constant="27" id="M8j-B9-ad9"/>
-                            <constraint firstItem="sxk-vV-TjS" firstAttribute="top" secondItem="vei-X3-dig" secondAttribute="bottom" constant="28" id="Wp5-Gz-CZg"/>
+                            <constraint firstItem="RaI-DY-0Mq" firstAttribute="centerX" secondItem="vei-X3-dig" secondAttribute="centerX" id="Poe-Ng-Ykj"/>
                             <constraint firstItem="sxk-vV-TjS" firstAttribute="trailing" secondItem="sBj-Eg-Q0Q" secondAttribute="trailing" id="Xgx-bY-PJu"/>
                             <constraint firstItem="CY2-JV-MYx" firstAttribute="trailing" secondItem="npu-dI-81a" secondAttribute="trailing" id="fiZ-xk-egC"/>
-                            <constraint firstItem="drI-78-s2g" firstAttribute="centerX" secondItem="Rsf-BA-6cZ" secondAttribute="centerX" id="fuJ-LG-sUI"/>
-                            <constraint firstItem="vei-X3-dig" firstAttribute="leading" secondItem="sxk-vV-TjS" secondAttribute="leading" id="lL9-iI-W1B"/>
+                            <constraint firstItem="vei-X3-dig" firstAttribute="leading" secondItem="sxk-vV-TjS" secondAttribute="leading" id="fzc-RC-qPR"/>
+                            <constraint firstItem="vei-X3-dig" firstAttribute="centerX" secondItem="Rsf-BA-6cZ" secondAttribute="centerX" id="ipO-Iz-NYo"/>
+                            <constraint firstItem="vei-X3-dig" firstAttribute="leading" secondItem="Rsf-BA-6cZ" secondAttribute="leadingMargin" constant="27" id="kol-MZ-2fL"/>
                             <constraint firstItem="CY2-JV-MYx" firstAttribute="leading" secondItem="npu-dI-81a" secondAttribute="leading" id="lZ0-c1-rcL"/>
+                            <constraint firstItem="RaI-DY-0Mq" firstAttribute="leading" secondItem="Rsf-BA-6cZ" secondAttribute="leadingMargin" constant="51" id="oBE-Ji-rDT"/>
+                            <constraint firstItem="sxk-vV-TjS" firstAttribute="top" secondItem="vei-X3-dig" secondAttribute="bottom" constant="28" id="pML-Zr-Zqb"/>
                             <constraint firstItem="npu-dI-81a" firstAttribute="top" secondItem="CY2-JV-MYx" secondAttribute="bottom" constant="72" id="qfd-ih-qHU"/>
                             <constraint firstItem="sBj-Eg-Q0Q" firstAttribute="top" secondItem="sxk-vV-TjS" secondAttribute="bottom" constant="55" id="u1a-vt-KK2"/>
-                            <constraint firstItem="drI-78-s2g" firstAttribute="leading" secondItem="vei-X3-dig" secondAttribute="leading" id="u77-Oz-0hf"/>
-                            <constraint firstItem="drI-78-s2g" firstAttribute="trailing" secondItem="vei-X3-dig" secondAttribute="trailing" id="uje-SC-Mm0"/>
                             <constraint firstItem="sBj-Eg-Q0Q" firstAttribute="leading" secondItem="CY2-JV-MYx" secondAttribute="leading" id="xf9-eD-cU2"/>
+                            <constraint firstItem="vei-X3-dig" firstAttribute="trailing" secondItem="sxk-vV-TjS" secondAttribute="trailing" id="yBA-gt-ewg"/>
                         </constraints>
                     </view>
                     <connections>
@@ -414,6 +411,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="SnapShareLogoBig.png" width="1062" height="625"/>
         <image name="camera" width="32" height="32"/>
         <image name="friends" width="32" height="32"/>
         <image name="home" width="32" height="32"/>
