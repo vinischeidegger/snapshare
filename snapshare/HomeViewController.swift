@@ -50,7 +50,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        //let userUid = Auth.auth().currentUser?.uid
         let post : Post
         post = posts[indexPath.row]
         
@@ -64,19 +63,65 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func getPostsFromServer() {
-        self.dbRef?.child("posts").queryOrdered(byChild: "timestamp").observe(.value, with: { (snapshot) in
-            if snapshot.childrenCount > 0 {
-                self.posts.removeAll()
-                for posts in snapshot.children.allObjects as! [DataSnapshot] {
-                    let postObject = posts.value as! [String : AnyObject]
-                    let post = self.createPost(postObject: postObject)
-                    self.posts.append(post)
-                    self.posts.reverse()
+        if let userUid = Auth.auth().currentUser?.uid {
+            
+            self.posts.removeAll()
+            
+            self.dbRef.child("follows").queryOrderedByKey().queryEqual(toValue: userUid).observe(.value, with: { snapshot in
+                print(snapshot)
+                for case let childSnapshot as DataSnapshot in snapshot.children {
+                    print("Child: ")
+                    print(childSnapshot)
+                    if childSnapshot.key == userUid {
+                        print("Child Value: ")
+                        print(childSnapshot.value)
+                        var followedUsers = childSnapshot.value as? [String: [String: String]]
+                        for (_, followedUser) in followedUsers! {
+                            if let follId = followedUser["uid"] {
+                                self.dbRef?.child("posts").queryOrdered(byChild: "userUid").queryEqual(toValue: follId).observe(.value, with: { (postSnapshot) in
+                                    print(postSnapshot)
+                                    
+                                    if postSnapshot.childrenCount > 0 {
+                                        
+                                        for posts in postSnapshot.children.allObjects as! [DataSnapshot] {
+                                            let postObject = posts.value as! [String : AnyObject]
+                                            let post = self.createPost(postObject: postObject)
+                                            self.posts.append(post)
+                                            //self.posts.reverse()
+                                        }
+                                    }
+                                    self.postTableView.reloadData()
+                                    
+                                    
+                                })
+                            }
+                        }
+                    }
                 }
-            }
-            self.postTableView.reloadData()
-        })
+                
+                
+                
+            })
+            self.posts.sort(by: postOrder)
+        }
+       // self.dbRef?.child("posts").queryOrdered(byChild: "timestamp").observe(.value, with: { (snapshot) in
+         //   if snapshot.childrenCount > 0 {
+           //     self.posts.removeAll()
+             //   for posts in snapshot.children.allObjects as! [DataSnapshot] {
+               //     let postObject = posts.value as! [String : AnyObject]
+                 //   let post = self.createPost(postObject: postObject)
+                   // self.posts.append(post)
+                    //self.posts.reverse()
+    //            }
+      //      }
+        //    self.postTableView.reloadData()
+       // })
         
+    }
+    
+    
+    func postOrder(value1: Post, value2: Post) -> Bool {
+        return value1.timestamp! < value2.timestamp!;
     }
     
     func createPost(postObject: [String: AnyObject]) -> Post {

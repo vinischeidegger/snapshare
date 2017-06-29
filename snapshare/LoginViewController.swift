@@ -16,10 +16,13 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var usernameText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
     @IBOutlet weak var facebookLoginButton: UIButton!
+    
+    var ref: DatabaseReference!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.ref = Database.database().reference()
+        
         // Do any additional setup after loading the view.
     }
 
@@ -29,7 +32,9 @@ class LoginViewController: UIViewController {
         alert.addAction(ok)
         self.present(alert, animated: true, completion: nil)
     }
+    
     @IBAction func facebookLoginClicked(_ sender: UIButton) {
+        
         FBSDKLoginManager().logIn(withReadPermissions: ["email", "public_profile"], from: self) { (result, error) in
             if (error != nil || (result?.isCancelled)!) {
                 self.alertError(error: error!)
@@ -51,12 +56,33 @@ class LoginViewController: UIViewController {
         
         Auth.auth().addStateDidChangeListener { (auth, user) in
             if (user != nil) {
-                let ref : DatabaseReference = Database.database().reference()
-                let uid = user?.uid as String!
-                let photoURL : String = (user?.photoURL?.absoluteString)!
-                ref.child("users").child(uid!).setValue(["name": user?.displayName!, "photoURL": photoURL])
-                ref.child("followedBy").child(uid!).setValue([uid! : uid!])
-                ref.child("follows").child(uid!).setValue([uid! : uid!])
+                if let uid = user?.uid as String! {
+                    print(uid)
+                    if let providerData = user?.providerData {
+                        for profile in providerData {
+                        //print("Sign-in provider: " 	+ profile.providerId)
+                            print("  Provider-specific UID: "+profile.uid)
+                            var displayName: String
+                            if profile.displayName != nil {
+                                displayName = profile.displayName!
+                            } else {
+                                displayName = profile.email!
+                            }
+                    
+                            print("  Name: "+displayName)
+                            print("  Email: "+profile.email!)
+                            //print("  Photo URL: "profile.photoURL)
+                        }
+                    }
+                
+                    //let photoURL : String = (user?.photoURL?.absoluteString)!
+                    //self.ref.child("users").child(uid).setValue(["name": user?.displayName!, "photoURL": photoURL])
+                
+                    let followItem = ["uid": uid]
+                    let childUpdates = ["/follows/\(uid)/\(uid)": followItem,
+                                    "/followedBy/\(uid)/\(uid)/": followItem] as [String : Any]
+                    self.ref.updateChildValues(childUpdates)
+                }
             }
         }
     }
@@ -87,6 +113,20 @@ class LoginViewController: UIViewController {
                     
                     UserDefaults.standard.set(user!.uid, forKey: "userSigned")
                     UserDefaults.standard.synchronize()
+
+                    if let uid = Auth.auth().currentUser?.uid as String! {
+                
+                    self.ref.child("users").child(uid).setValue(["name": user?.email!])
+                    
+                    let followItem = ["uid": uid]
+                    let childUpdates = ["/follows/\(uid)/\(uid)": followItem,
+                                        "/followedBy/\(uid)/\(uid)/": followItem] as [String : Any]
+                    self.ref.updateChildValues(childUpdates)
+                    
+                    
+//                    self.ref.child("followedBy").child(uid!).setValue([uid! : uid!])
+//                    self.ref.child("follows").child(uid!).setValue([uid! : uid!])
+                    }
                     
                     let delegate : AppDelegate = UIApplication.shared.delegate as! AppDelegate
                     delegate.rememberLogin()

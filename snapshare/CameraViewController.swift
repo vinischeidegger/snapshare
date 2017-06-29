@@ -13,7 +13,7 @@ import FirebaseStorage
 import FirebaseAuth
 import FirebaseDatabase
 
-class CameraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
+class CameraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate  {
 
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var cameraButton: UIButton!
@@ -22,11 +22,13 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     var imagePicker: UIImagePickerController!
     var uuid = NSUUID().uuidString
     var postDbRef : DatabaseReference!
+    var postTextPlaceholder: String = "Let's make subtitles great again..."
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.postDbRef = Database.database().reference().child("posts")
-        
+        postTextView.delegate = self
+        self.navigationItem.rightBarButtonItem?.isEnabled = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -135,6 +137,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         let chosenImage = info[UIImagePickerControllerEditedImage] as! UIImage
         photoImageView.contentMode = .scaleAspectFill
         photoImageView.image = chosenImage
+        self.navigationItem.rightBarButtonItem?.isEnabled = true
         
         dismiss(animated: true, completion: nil)
     }
@@ -158,21 +161,53 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
                     
                     self.present(alert, animated: true, completion: nil)
                 } else {
-                    let imageURL = metadata?.downloadURL()?.absoluteString
-                    let uid = Auth.auth().currentUser?.uid
-                    let key = self.postDbRef.childByAutoId().key
                     
-                    let photoPost = ["id" : key,"imageUrl" : imageURL!, "createdBy" : Auth.auth().currentUser!.displayName!, "userUid" : uid!, "storageUUID": self.uuid, "subtitle" : self.postTextView.text, "timestamp": ServerValue.timestamp()] as [String : Any]
+                    if let user = Auth.auth().currentUser! as? FirebaseAuth.User {
+                        let imageURL = metadata?.downloadURL()?.absoluteString
+                        let uid = user.uid
+                        
+                        var displayName: String
+                        if user.displayName != nil {
+                            displayName = user.displayName!
+                        } else {
+                            displayName = user.email!
+                        }
+                        let key = self.postDbRef.childByAutoId().key
                     
-                    self.postDbRef.child(key).setValue(photoPost)
-                    
-                    self.photoImageView.image = UIImage(named: "")
-                    self.postTextView.text = "Type your subtitle..."
-                    self.tabBarController?.selectedIndex = 0
+                        let photoPost = ["id" : key,"imageUrl" : imageURL!, "createdBy" : displayName, "userUid" : uid, "storageUUID": self.uuid, "subtitle" : self.postTextView.text, "timestamp": ServerValue.timestamp()] as [String : Any]
+                        
+                        self.postDbRef.child(key).setValue(photoPost)
+                        
+                        self.photoImageView.image = UIImage(named: "image_placeholder.png")
+                        self.photoImageView.contentMode = UIViewContentMode.scaleAspectFit
+                        self.postTextView.text = self.postTextPlaceholder
+                        self.navigationItem.rightBarButtonItem?.isEnabled = false
+                        self.tabBarController?.selectedIndex = 0
+                    }
                     
                 }
             })
         }
 
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView)
+    {
+        if (textView.text == postTextPlaceholder)
+        {
+            textView.text = ""
+            textView.textColor = .black
+        }
+        textView.becomeFirstResponder() //Optional
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView)
+    {
+        if (textView.text == "")
+        {
+            textView.text = postTextPlaceholder
+            textView.textColor = .lightGray
+        }
+        textView.resignFirstResponder()
     }
 }

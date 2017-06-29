@@ -15,7 +15,7 @@ class FriendsViewController: UIViewController, UITableViewDelegate, UITableViewD
     var users = [User]()
     var db: DatabaseReference!
     var filteredData = [User]()
-    var isSearching = false
+    
     @IBOutlet weak var userTableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
@@ -29,30 +29,47 @@ class FriendsViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
 
     func retrieveUsers() {
-        let userId = Auth.auth().currentUser?.uid
         db.child("users").queryOrderedByKey().observe(.value, with: { snapshot in
-            if let users = snapshot.value as? [String: [String: String]] {
-                self.users.removeAll()
-                for eachUser in users {
-                    if (eachUser.key != userId) {
-                        let user = User()
-                        user.uid = eachUser.key
-                        user.username = eachUser.value["name"]
-                        self.users.append(user)
-                        
+            if let dbUsers = snapshot.value as? [String: [String: String]],
+                let userId = Auth.auth().currentUser?.uid {
+                
+                print("Logged user "+userId)
+
+                self.db.child("follows").queryOrderedByKey().queryEqual(toValue: userId).observe(.value, with: { snapshot in
+                    
+                    self.users.removeAll()
+                    for eachUser in dbUsers {
+                        if (eachUser.key != userId) {
+                            print("Listed user "+eachUser.key)
+                            let user = User()
+                            user.uid = eachUser.key
+                            user.username = eachUser.value["name"]
+                            
+                            for case let childSnapshot as DataSnapshot in snapshot.children {
+                                print("Child: ")
+                                print(childSnapshot)
+                                if childSnapshot.key == userId {
+                                    print("Child Value: ")
+                                    print(childSnapshot.value)
+                                    if let following = childSnapshot.value as? [String: [String: String]]{
+                                        print(following)
+                                        if  (following[eachUser.key] != nil) {
+                                            user.follow = true
+                                        }
+                                    }
+                                }
+                            }
+                            self.users.append(user)
+                        }
                     }
                     self.userTableView.reloadData()
-                }
+                })
             }
         })
         
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        if isSearching {
-            return filteredData.count
-        }
         return users.count
     }
     
@@ -61,10 +78,6 @@ class FriendsViewController: UIViewController, UITableViewDelegate, UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell") as! UserTableViewCell
         
         var user = users[indexPath.row]
-        
-        if isSearching {
-            user = filteredData[indexPath.row]
-        }
         
         cell.userNameLabel.text = user.username
         cell.selectionStyle = .none
@@ -82,16 +95,28 @@ class FriendsViewController: UIViewController, UITableViewDelegate, UITableViewD
         if let indexPath = userTableView.indexPath(for: sender) {
             let user = users[indexPath.row]
             user.follow = !user.follow
-            userTableView.reloadData()
             
             //Now we need to save the follow info in the database
-            let userId = Auth.auth().currentUser?.uid
+            if let userId = Auth.auth().currentUser?.uid,
+               let followedUser = user.uid {
             
-            if user.follow == true {
-                //self.db.child("following").child(userId!).updateChildValues([user.uid!: user.uid!])
-            } else {
-                //self.db.child("following").child(userId!).child(user.uid!).removeValue()
+                if user.follow == true {
+                    let followItem = ["uid": user.uid!]
+                
+                        let childUpdates = ["/follows/\(userId)/\(followedUser)": followItem,
+                                    "/followedBy/\(followedUser)/\(userId)/": ["uid": userId]] as [String : Any]
+                        self.db.updateChildValues(childUpdates)
+                
+                
+                    //self.db.child("follows").ref(userId!).set(user.uid!)
+                } else {
+                    self.db.child("follows").child(userId).child(followedUser).removeValue()
+                    self.db.child("followedBy").child(followedUser).child(userId).removeValue()
+                    
+                }
             }
+            userTableView.reloadData()
+            
         }
     }
 

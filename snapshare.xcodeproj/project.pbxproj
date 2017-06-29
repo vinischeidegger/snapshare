@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		34204B80035486BEF8D6C73E /* Pods_snapshareUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68F7214D7DE699DDC9FEA860 /* Pods_snapshareUITests.framework */; };
+		571DCFD41F045E6E00522876 /* image_placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 571DCFD31F045E6E00522876 /* image_placeholder.png */; };
 		571F5D9D1F03B15F009441A7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571F5D9C1F03B15F009441A7 /* User.swift */; };
 		571F5D9F1F03B247009441A7 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571F5D9E1F03B247009441A7 /* UserTableViewCell.swift */; };
 		574494F11F01A61200F65932 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574494F01F01A61200F65932 /* LoginViewController.swift */; };
@@ -46,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		02BDCE0D94DD00416FA81610 /* Pods-snapshare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snapshare.release.xcconfig"; path = "Pods/Target Support Files/Pods-snapshare/Pods-snapshare.release.xcconfig"; sourceTree = "<group>"; };
+		571DCFD31F045E6E00522876 /* image_placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image_placeholder.png; sourceTree = "<group>"; };
 		571F5D9C1F03B15F009441A7 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		571F5D9E1F03B247009441A7 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		574494F01F01A61200F65932 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -137,13 +139,14 @@
 				574494F21F01BC3900F65932 /* PostTableViewCell.swift */,
 				574494F41F01C09400F65932 /* CameraViewController.swift */,
 				574494F61F03370600F65932 /* Post.swift */,
+				571F5D9C1F03B15F009441A7 /* User.swift */,
+				571F5D9E1F03B247009441A7 /* UserTableViewCell.swift */,
 				57CC32811F01A1FA00282945 /* Main.storyboard */,
 				57CC32841F01A1FA00282945 /* Assets.xcassets */,
 				57CC32861F01A1FA00282945 /* LaunchScreen.storyboard */,
 				57CC32891F01A1FA00282945 /* Info.plist */,
 				57CC32AB1F01A21800282945 /* GoogleService-Info.plist */,
-				571F5D9C1F03B15F009441A7 /* User.swift */,
-				571F5D9E1F03B247009441A7 /* UserTableViewCell.swift */,
+				571DCFD31F045E6E00522876 /* image_placeholder.png */,
 			);
 			path = snapshare;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 			files = (
 				57CC32881F01A1FA00282945 /* LaunchScreen.storyboard in Resources */,
 				57CC32AC1F01A21800282945 /* GoogleService-Info.plist in Resources */,
+				571DCFD41F045E6E00522876 /* image_placeholder.png in Resources */,
 				57CC32851F01A1FA00282945 /* Assets.xcassets in Resources */,
 				57CC32831F01A1FA00282945 /* Main.storyboard in Resources */,
 			);
